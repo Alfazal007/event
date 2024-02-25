@@ -14,7 +14,7 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
 
     // await verify(something.address, []);
     // log("verified");
-    const something = await ethers.getContractAt("Something", "0x1D0BAF5ee58FB2A97c9481d8BC6c50A4B6804251");
+    const something = await ethers.getContractAt("Something", "<deployed contract address>");
     const update = await something.update();
     const txReceipt = await update.wait(3);
     console.log(txReceipt.logs[0].args[0].toString());
