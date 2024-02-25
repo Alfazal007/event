@@ -1,0 +1,36 @@
+{
+  "language": "Solidity",
+  "sources": {
+    "contracts/Something.sol": {
+      "content": "// SPDX-License-Identifier: MIT\npragma solidity 0.8.24;\n\n\ncontract Something {\n    uint256 public number;\n    event some_event(uint256 number1);\n    constructor() {\n        number = 10;\n    }\n    function update() external {\n        number = number + 12;\n        emit some_event(number);\n    }\n    function get() public view returns(uint256) {\n        return number;\n    }\n}\n"
+    }
+  },
+  "settings": {
+    "evmVersion": "paris",
+    "optimizer": {
+      "enabled": false,
+      "runs": 200
+    },
+    "outputSelection": {
+      "*": {
+        "*": [
+          "abi",
+          "evm.bytecode",
+          "evm.deployedBytecode",
+          "evm.methodIdentifiers",
+          "metadata",
+          "devdoc",
+          "userdoc",
+          "storageLayout",
+          "evm.gasEstimates"
+        ],
+        "": [
+          "ast"
+        ]
+      }
+    },
+    "metadata": {
+      "useLiteralContent": true
+    }
+  }
+}
